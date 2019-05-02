@@ -1,0 +1,42 @@
+Back Tracking concept:
+
+1. Your choice 
+
+	For example incase of GenerateParenthesis problem, you know you want single either this "(" or this ")" at every loop. So how to get that adding recursively is this part.
+	
+		backtrack(list, str+"(", open+1, close, max);
+		backtrack(list, str+")", open, close+1, max);
+	
+	
+	For example incase of LetterCombinationsofaPhoneNumber problem,  you know you want single letters from every corresponding number at every loop. So how to get that adding recursively is this part.
+	
+		combination(prefix + letters.charAt(i), digits, offset + 1, ret);
+	
+		Here prefix & letters.charAt(i) is that choice
+		
+		
+		
+2. Constriant 
+
+	This is the contrant till when you need to go on into the recursive loop. This will tell you when to stop adding those choices recurisvely to get your one combination of result.
+	
+	For example incase of GenerateParenthesis problem: We wanted to recursive loop till we get one str which is 2*max.
+	
+	 if(str.length() == max*2){
+            list.add(str);
+            return;
+        }
+        
+     For example incase of LetterCombinationsofaPhoneNumber problem: we wanted to recursively loop till we have got all digit to make a combination of one result. Note here we dint loop 
+     																 till prefix because our last digit 9 as 4 letters in it.    
+     
+     if (offset >= digits.length()) {
+    			ret.add(prefix);
+    			return;
+    		}
+	 
+	
+3. Target
+
+	Target for each recursive iteration 
+	And once the constrast is hit, target to add to final result
