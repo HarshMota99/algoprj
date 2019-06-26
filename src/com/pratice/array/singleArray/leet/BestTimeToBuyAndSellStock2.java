@@ -66,6 +66,8 @@ public class BestTimeToBuyAndSellStock2 {
 		BestTimeToBuyAndSellStock2 andSellStock2 = new BestTimeToBuyAndSellStock2();
 		
 		System.out.println(andSellStock2.maxProfit(new int[] {7,1,5,3,6,4}));
+		System.out.println(andSellStock2.maxProfit(new int[] {1,2,3,4,5}));
+		
 
 	}
 
